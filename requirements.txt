@@ -1,0 +1,16 @@
+# (c) Michael Buluma
+ansible>=4.10
+ansible-lint
+ansible-runner
+ansible-runner-http
+argcomplete
+docker
+flake8
+jmespath
+molecule
+molecule-docker
+molecule-vagrant
+netaddr
+openshift
+python-vagrant
+yamllint

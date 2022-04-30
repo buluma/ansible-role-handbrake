@@ -1,0 +1,12 @@
+---
+- hosts: all
+  remote_user: root
+  become: true
+  tasks:
+    - name: handbrake --help
+      ansible.builtin.command: handbrake --help
+      register: resultout
+      # changed_when: result is not succeeded
+
+    - debug:
+        msg: "{{resultout.stdout}}"
