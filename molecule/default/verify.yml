@@ -1,12 +1,12 @@
 ---
-- hosts: all
-  remote_user: root
-  become: true
+- name: Verify
+  hosts: all
+  gather_facts: false
   tasks:
-    - name: handbrake --help
-      ansible.builtin.command: handbrake --help
+    - name: handbrake --version
+      ansible.builtin.command: handbrake --help --json
       register: resultout
-      # changed_when: result is not succeeded
+      changed_when: resultout is not succeeded
 
     - debug:
-        msg: "{{resultout.stdout}}"
+        msg: "{{ resultout.stdout }}"
