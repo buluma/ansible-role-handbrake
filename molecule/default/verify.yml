@@ -3,7 +3,7 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: handbrake --version
+    - name: Handbrake --version
       ansible.builtin.command: handbrake --help --json
       register: resultout
       changed_when: resultout is not succeeded
